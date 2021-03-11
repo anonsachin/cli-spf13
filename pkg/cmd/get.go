@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/atotto/clipboard"
-	"github.com/cli-spf13/pkg/config"
+	"github.com/anonsachin/cli-spf13/pkg/config"
 	"github.com/spf13/cobra"
 )
 

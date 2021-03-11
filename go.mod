@@ -1,4 +1,4 @@
-module github.com/cli-spf13
+module github.com/anonsachin/cli-spf13
 
 go 1.15
 
