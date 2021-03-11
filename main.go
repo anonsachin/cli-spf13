@@ -15,8 +15,21 @@ limitations under the License.
 */
 package main
 
-import "github.com/cli-spf13/cmd"
+import (
+	"log"
+
+	"github.com/cli-spf13/pkg/config"
+
+	// "github.com/cli-spf13/cmd"
+)
 
 func main() {
-	cmd.Execute()
+	// cmd.Execute()
+	conf, err := config.NewEmojiConfig()
+
+	if err != nil{
+		log.Panic(err.Error())
+	}
+
+	log.Printf("The config == %v",conf)
 }
