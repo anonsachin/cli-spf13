@@ -19,8 +19,9 @@ import (
 	"log"
 
 	"github.com/cli-spf13/pkg/config"
+	"github.com/spf13/cobra"
 
-	// "github.com/cli-spf13/cmd"
+	"github.com/cli-spf13/pkg/cmd"
 )
 
 func main() {
@@ -31,5 +32,10 @@ func main() {
 		log.Panic(err.Error())
 	}
 
-	log.Printf("The config == %v",conf)
+	root := cmd.SetupRoot()
+	get := cmd.BuildGet(conf)
+	list := cmd.BuildList(conf)
+	cmd.WireUPSubCommands(root,get,list)
+
+	cobra.CheckErr(root.Execute())
 }
